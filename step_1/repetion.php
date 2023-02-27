@@ -7,6 +7,19 @@ while ($id <= 15) {
   $id = $id + 1;
 }
 
-for ($order = 0; $order <= 10; $order++) {
+for ($order = 11; $order <= 10; $order++) {
   echo "O pedido $order está pronto" . PHP_EOL;
 }
+
+for ($counter = 10; $counter >= 0; $counter--) {
+  if ($counter <= 6 && $counter >= 3) {
+    echo "...\n";
+    continue;
+  } else if ($counter == 0) {
+    break;
+  }
+
+  echo "A bomba vai estourar em $counter ..." . PHP_EOL;
+}
+
+echo "Boow!!!\n";
