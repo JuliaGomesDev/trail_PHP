@@ -2,7 +2,7 @@
 
 $age = 18;
 
-echo "Você só pode entrar se tiver mais de 18 anos" . PHP_EOL;
+echo "Você só pode entrar se tiver a partir de 18 anos" . PHP_EOL;
 
 if ($age >= 18) {
   echo "Você tem $age anos. Pode entrar\n";
