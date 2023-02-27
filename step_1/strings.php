@@ -3,7 +3,7 @@
 /* 
   \n - break line
   \t - tab
-  \ -  scape's character
+  \  - scape's character
 */
 
 $string = "Hello World";
