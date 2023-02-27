@@ -15,7 +15,10 @@ $account_03 = [
   'balance' => 5000
 ];
 
-$accounts = [$account_01, $account_02, $account_03];
+$accounts = [
+  $account_01, 
+  $account_02, 
+  $account_03];
 
 for ($i = 0; $i < count($accounts); $i++) {
   echo $accounts[$i]['owner'] . PHP_EOL;
