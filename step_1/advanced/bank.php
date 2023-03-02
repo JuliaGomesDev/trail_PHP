@@ -42,9 +42,10 @@ $accounts = [
   ]
 ];
 
-$accounts['123.456.789-11'] = drawMoney(account: $accounts['123.456.789-11'],value: 500);
-$accounts['123.456.789-11'] = depositMoney(account: $accounts['123.456.789-11'],value: 1500);
+
+$accounts['123.456.789-11'] = drawMoney($accounts['123.456.789-11'], 500);
+$accounts['123.456.789-11'] = depositMoney($accounts['123.456.789-11'], 1500);
 
 foreach ($accounts as $cpf => $account) {
-  printMessage($cpf . " - " . $account['owner'] . ' - ' . $account['balance']);
+  printMessage("$cpf - {$account['owner']} - {$account['balance']}");
 }
