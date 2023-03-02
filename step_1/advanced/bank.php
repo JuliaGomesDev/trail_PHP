@@ -21,7 +21,9 @@ $accounts['123.456.789-11'] = drawMoney($accounts['123.456.789-11'], 500);
 $accounts['123.456.789-11'] = depositMoney($accounts['123.456.789-11'], 1500);
 
 nameUpperCase($accounts['123.456.789-12']);
+nameUpperCase($accounts['123.456.789-10']);
 
 foreach ($accounts as $cpf => $account) {
-  printMessage("$cpf - {$account['owner']} - {$account['balance']}");
+  ['owner' => $owner, 'balance' => $balance] = $account;
+  printMessage("$cpf - $owner - $balance");
 }
