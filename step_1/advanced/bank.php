@@ -23,6 +23,8 @@ $accounts['123.456.789-11'] = depositMoney($accounts['123.456.789-11'], 1500);
 nameUpperCase($accounts['123.456.789-12']);
 nameUpperCase($accounts['123.456.789-10']);
 
+unset($accounts['123.456.789-11']);
+
 foreach ($accounts as $cpf => $account) {
   ['owner' => $owner, 'balance' => $balance] = $account;
   printMessage("$cpf - $owner - $balance");
