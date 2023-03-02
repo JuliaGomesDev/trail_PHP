@@ -1,16 +1,27 @@
 <?php
 
-function printMessage($message) 
+function printMessage(string $message)
 {
   echo $message . PHP_EOL;
 }
 
-function drawMoney($account, $value)
+function drawMoney(array $account, float $value) : array
 {
   if ($value > $account['balance']) {
     printMessage('Você não pode sacar'); 
   } else {
     $account['balance'] -= $value;
+  }
+
+  return $account;
+}
+
+function depositMoney(array $account, float $value) : array 
+{
+  if ($value > 0) {
+    $account['balance'] += $value;
+  } else {
+    printMessage('Depósitos não podem ser negativos');
   }
 
   return $account;
@@ -32,6 +43,7 @@ $accounts = [
 ];
 
 $accounts['123.456.789-11'] = drawMoney($accounts['123.456.789-11'], 500);
+$accounts['123.456.789-11'] = depositMoney($accounts['123.456.789-11'], 1500);
 
 foreach ($accounts as $cpf => $account) {
   printMessage($cpf . " - " . $account['owner'] . ' - ' . $account['balance']);
