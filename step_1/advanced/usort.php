@@ -23,11 +23,17 @@ sort($grades);
 var_dump($grades);
 function orderedGrades(array $grade1, array $grade2) : int
 { 
-  if ($grade1['grade'] === $grade2['grade']) {
-    return 0;  
-  };
+  // first option
+  return $grade1['grade'] <=> $grade2['grade'];
 
-  return ($grade1['grade'] < $grade2['grade']) ? -1 : 1;
+  /* second option
+    
+    if ($grade1['grade'] === $grade2['grade']) {
+      return 0;  
+    };
+    
+    return ($grade1['grade'] < $grade2['grade']) ? -1 : 1; 
+  */ 
 };
 
 usort($grades, 'orderedGrades');
