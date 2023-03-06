@@ -1,31 +1,29 @@
 <?php 
 
-// $data = [
-//   001 => [
-//     'Carmem',
-//     25, 
-//     1.78, 
-//     'Auxiliar Administrativo'
-//   ],
-//   002 => [
-//     'Rafael',
-//     48, 
-//     1.80, 
-//     'Gerente Financeiro'
-//   ]
-// ];
+$data = [
+  001 => [
+    'Carmem',
+    25, 
+    1.78, 
+    'Auxiliar Administrativo'
+  ],
+  002 => [
+    'Rafael',
+    48, 
+    1.80, 
+    'Gerente Financeiro'
+  ]
+];
 
-// foreach ($data as $employee)
-// {
-//   list($name, $age, $height, $position) = $employee;
+foreach ($data as $employee)
+{
+  list($name, $age, $height, $position) = $employee;
 
-//   var_dump($name);
-//   var_dump($age);
-//   var_dump($height);
-//   var_dump($position);
-// };
-
-use JetBrains\PhpStorm\Pure;
+  var_dump($name);
+  var_dump($age);
+  var_dump($height);
+  var_dump($position);
+};
 
 $data2 = [
   'name' => 'João',
