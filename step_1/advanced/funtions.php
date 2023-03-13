@@ -31,3 +31,5 @@ function nameUpperCase(array &$account)
 { 
   $account['owner'] = mb_strtoupper($account['owner']);
 }
+
+?>

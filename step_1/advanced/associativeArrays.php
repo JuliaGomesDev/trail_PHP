@@ -24,3 +24,5 @@ $accounts = [
 for ($i = 0; $i < count($accounts); $i++) {
   echo $accounts[$i]['owner'] . PHP_EOL;
 }
+
+?>

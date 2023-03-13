@@ -7,3 +7,5 @@ for ($i = 0; $i < 100; $i++) {
     echo "Contando $i" . PHP_EOL;
   }
 }
+
+?>

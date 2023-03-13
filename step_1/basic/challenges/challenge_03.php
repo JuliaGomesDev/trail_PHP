@@ -20,3 +20,5 @@ if ($calculation <= 18.5) {
 } else {
   echo "Você está com obsidade grau III\n";
 } 
+
+?>

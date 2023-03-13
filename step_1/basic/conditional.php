@@ -18,3 +18,5 @@ $nationality = 'brasileiro';
 $message = $nationality == 'brasileiro' ? "Você é $nationality. Pode entrar\n" : "Você é $nationality. Não pode entrar" . PHP_EOL;
 
 echo $message;
+
+?>

@@ -8,3 +8,5 @@ $string = "Hello world";
 $boolean = true;
 
 echo gettype($boolean);
+
+?>

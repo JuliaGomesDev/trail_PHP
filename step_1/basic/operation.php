@@ -8,3 +8,4 @@ $exp = 2 ** 2;
 $module = 10 % 2;
 echo $module;
 
+?>

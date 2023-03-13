@@ -23,3 +23,5 @@ $accounts['123.456.789-13'] = [
 foreach ($accounts as $cpf => $account){
   echo $cpf . " - " . $account['owner'] . PHP_EOL;
 }
+
+?>
