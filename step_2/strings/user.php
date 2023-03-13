@@ -2,6 +2,7 @@
 
 // declare variables
 
+$userName = 'Júlia Gomes';
 $email = 'júlia@novahaus.com.br';
 $password = 'júlíáá';
 
@@ -9,22 +10,22 @@ $password = 'júlíáá';
 
 $atPosition = strpos($email, '@');
 
-// find a user inside of the email
+// find a text inside of the variable
 
 $user = substr($email, 0, $atPosition);
+echo substr($email, $atPosition + 1) . PHP_EOL;
+
+// Treat the string as upper case
 
 echo mb_strtoupper($user) . PHP_EOL;
-echo substr($email, $atPosition) . PHP_EOL;
 
-// show the value in bytes of the variable password 
+// show the value in bytes of a variable  
 
 var_dump(strlen($password));
 
-// show the value of character that inside the password
+// show the value of character that inside of a variable
 
 var_dump(mb_strlen($password));
-
-// strlen returns the number of bytes
 
 if(mb_strlen($password) < 8) { 
   echo 'Insecure Password' . PHP_EOL;
@@ -32,5 +33,13 @@ if(mb_strlen($password) < 8) {
   echo $password . PHP_EOL;
 }
 
+// explode transform a string in a array
+
+$nameArray = explode(' ', $userName);
+
+list($name, $lastname) = $nameArray;
+
+echo 'Nome: '. $name . PHP_EOL;
+echo 'Sobrenome: '. $lastname . PHP_EOL;
  
 ?>
