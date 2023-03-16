@@ -35,6 +35,12 @@ $conta->toDeposit(-100);
 $conta->toDeposit(200);
 var_dump($conta);
 
+$conta->ownerName = 'Júlia';
+$lastname = ' Gomes';
+$conta->ownerName .= $lastname;
+
+var_dump($conta->ownerName);
+
 ?>
 
 
