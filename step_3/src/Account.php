@@ -39,7 +39,13 @@ $conta->ownerName = 'Júlia';
 $lastname = ' Gomes';
 $conta->ownerName .= $lastname;
 
-var_dump($conta->ownerName);
+var_dump($conta->ownerName) . PHP_EOL;
+
+echo $conta->ownerCPF ?? 'CPF não informado' . PHP_EOL;
+
+$conta->ownerCPF = '123.456.789-10';
+
+echo $conta->ownerCPF ?? 'CPF não informado' . PHP_EOL;
 
 ?>
 
