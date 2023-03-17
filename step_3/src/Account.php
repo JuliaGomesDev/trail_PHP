@@ -1,52 +1,25 @@
 <?php
 class Account 
 {
-  private bool|string $ownerCPF;
-  private string $ownerName;
-  private float $balance = 0;
 
-  private function validateCPF(string $ownerCPF) : bool|string 
-  {
-    if($ownerCPF == '') {
-      return false;
-    }
+  private float $balance;
+  private static int $count = 0;
 
-    return $ownerCPF;
-  }
+  private Owner $owner;
 
-  public function __construct(bool|string $ownerCPF, string $ownerName, float $balance) {
-    $this->ownerCPF = $this->validateCPF($ownerCPF);
-    $this->ownerName = $ownerName;
+  public function __construct(Owner $owner, float $balance) {
+
+    $this->owner = $owner;
     $this->balance = $balance;
+    
+    self::$count++;
   }
 
-  /**
-   * Get the value of ownerCPF
-   */
-  public function getOwnerCPF(): bool|string
-  {
-    return $this->ownerCPF;
-  }
-
-  /**
-   * Get the value of ownerName
-   */
-  public function getOwnerName(): string
-  {
-    return $this->ownerName;
-  }
-
-  /**
-   * Get the value of balance
-   */
   public function getBalance(): float
   {
     return $this->balance;
   }
 
-  /**
-   * Set the value of balance
-   */
   public function setBalance(float $balance): self
   {
     $this->balance = $balance;
@@ -63,6 +36,7 @@ class Account
 
     $this->balance -= $value;  
   }
+
   public function toDeposit(float $value) : void 
   {
     if($value < 0){
@@ -82,6 +56,21 @@ class Account
 
     $this->toWithdrawn($valueToTransfer);
     $destinyAccount->toDeposit($valueToTransfer);
+  }
+
+  public static function returnCount() : int 
+  {
+    return Account::$count;
+  }
+
+  public function returnName() : string 
+  {
+    return $this->owner->name;
+  }
+
+  public function returnCPF() : string 
+  {
+    return $this->owner->getCPF();
   }
 };
 
