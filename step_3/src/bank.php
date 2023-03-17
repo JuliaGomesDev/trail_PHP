@@ -38,12 +38,12 @@ echo $name .= $lastname . PHP_EOL;
 
 $cpf = validateCPF($conta1);
 
-if($cpf == false) {
-  echo 'CPF não informado' . PHP_EOL;
-} else {
-  echo $cpf . PHP_EOL;
-}
+echo $cpf ? $cpf : 'CPF não informado' . PHP_EOL;
 
-echo $cpf ?? 'CPF não informado' . PHP_EOL;
+$conta1->setOwnerCPF('123.456.789-10');
+
+$cpf = validateCPF($conta1);
+
+echo $cpf ? $cpf : 'CPF não informado' . PHP_EOL;1
 
 ?>
