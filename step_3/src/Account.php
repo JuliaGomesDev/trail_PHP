@@ -1,26 +1,31 @@
 <?php
 class Account 
 {
-  private string $ownerCPF = '';
-  private string $ownerName = '';
+  private bool|string $ownerCPF;
+  private string $ownerName;
   private float $balance = 0;
+
+  private function validateCPF(string $ownerCPF) : bool|string 
+  {
+    if($ownerCPF == '') {
+      return false;
+    }
+
+    return $ownerCPF;
+  }
+
+  public function __construct(bool|string $ownerCPF, string $ownerName, float $balance) {
+    $this->ownerCPF = $this->validateCPF($ownerCPF);
+    $this->ownerName = $ownerName;
+    $this->balance = $balance;
+  }
 
   /**
    * Get the value of ownerCPF
    */
-  public function getOwnerCPF(): string
+  public function getOwnerCPF(): bool|string
   {
     return $this->ownerCPF;
-  }
-
-  /**
-   * Set the value of ownerCPF
-   */
-  public function setOwnerCPF(string $ownerCPF): self
-  {
-    $this->ownerCPF = $ownerCPF;
-
-    return $this;
   }
 
   /**
@@ -29,16 +34,6 @@ class Account
   public function getOwnerName(): string
   {
     return $this->ownerName;
-  }
-
-  /**
-   * Set the value of ownerName
-   */
-  public function setOwnerName(string $ownerName): self
-  {
-    $this->ownerName = $ownerName;
-
-    return $this;
   }
 
   /**
