@@ -1,11 +1,11 @@
 <?php
 
 namespace Alura\Bank\Model\Account;
-class Account 
+abstract class Account 
 {
 
-  private float $balance;
-  private static int $count = 0;
+  protected float $balance;
+  protected static int $count = 0;
 
   private Owner $owner;
 
@@ -29,15 +29,7 @@ class Account
     return $this;
   }
 
-  public function toWithdrawn(float $value) : void
-  {
-    if($this->balance < $value){
-      echo 'Valor não pode ser sacado' . PHP_EOL;
-      return;
-    }
-
-    $this->balance -= $value;  
-  }
+  abstract public function toWithdrawn(float $value);
 
   public function toDeposit(float $value) : void 
   {
@@ -49,21 +41,7 @@ class Account
     $this->balance += $value;
   }
 
-  public function transfer(float $valueToTransfer, Account $destinyAccount) : void
-  {
-    if($valueToTransfer > $this->balance) {
-      echo 'Valor não pode ser transferido' . PHP_EOL;
-      return;
-    } 
-
-    $this->toWithdrawn($valueToTransfer);
-    $destinyAccount->toDeposit($valueToTransfer);
-  }
-
-  public static function returnCount() : int 
-  {
-    return Account::$count;
-  }
+  abstract public static function returnCount() : int;
 
   public function returnName() : string 
   {
