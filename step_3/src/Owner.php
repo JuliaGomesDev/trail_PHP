@@ -1,40 +1,24 @@
 <?php
 
-class Owner {
+class Owner extends Person {
 
-  private bool|string $CPF;
-  public readonly string $name;
+  private Address $address;
 
-  public function __construct(string $name, string $CPF) {
+  public function __construct(string $name, Cpf $cpf, Address $address) {
 
-    $this->name = $this->validateName($name);
-    $this->CPF = $this->validateCPF($CPF);
-
+    parent::__construct($name, $cpf);
+    $this->address = $address;
   }
 
-  public function getCPF(): bool|string
+  public function getName() : string 
   {
-    return $this->CPF;
+     return $this->name;
   }
-
-  private function validateCPF(string $CPF) : bool|string 
+  
+  public function returnCPF() : string 
   {
-    if($CPF == '') {
-      return false;
-    }
-
-    return $CPF;
+    return $this->cpf->getCPF();
   }
-
-  private function validateName(string $name): string 
-  {
-    if(mb_strlen($name) < 5) {
-      echo 'O nome precisa conter mais de 5 caracteres' . PHP_EOL;
-      exit();
-    }
-
-    return $name;
-  } 
 }
 
 ?>

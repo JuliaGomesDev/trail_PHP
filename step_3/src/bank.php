@@ -1,16 +1,22 @@
 <?php 
 
-require_once 'Account.php';
+require_once 'Person.php';
+require_once 'Address.php';
+require_once 'Cpf.php';
 require_once 'Owner.php';
+require_once 'Account.php';
 
-$conta1 = new Account(new Owner('Júlia','123.456.789-10'), 500);
+$address = new Address('Franca', 'Jardim Zelinda', 'Rua X', '251');
+$owner1 = new Owner('Júlia', new Cpf('123.456.789-10'), $address);
+$conta1 = new Account($owner1, 500);
 
 $conta1->toWithdrawn(1000);
 $conta1->toWithdrawn(200);
 $conta1->toDeposit(-100);
 $conta1->toDeposit(200);
 
-$conta2 = new Account(new Owner('Fulano',''), 0);
+$owner2 = new Owner('Fulano',new Cpf('123.456.789'), $address);
+$conta2 = new Account($owner2, 0);
 
 $conta1->transfer(800, $conta2);
 $conta1->transfer(200, $conta2);

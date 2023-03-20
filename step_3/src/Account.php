@@ -65,12 +65,12 @@ class Account
 
   public function returnName() : string 
   {
-    return $this->owner->name;
+    return $this->owner->getName();
   }
 
   public function returnCPF() : string 
   {
-    return $this->owner->getCPF();
+    return $this->owner->returnCPF();
   }
 };
 
