@@ -1,5 +1,10 @@
 <?php
 
+namespace Alura\Bank\Model\Account;
+
+use Alura\Bank\Model\Person;
+use Alura\Bank\Model\Cpf;
+
 class Employee extends Person {
   private string $position;
 
