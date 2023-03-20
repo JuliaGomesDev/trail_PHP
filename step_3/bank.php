@@ -1,15 +1,9 @@
-<?php 
+<?php
 
-namespace Alura\Bank\Model;
+require_once 'autoload.php';
 
-require_once 'step_3/src/Model/Person.php';
-require_once 'step_3/src/Model/Address.php';
-require_once 'step_3/src/Model/Cpf.php';
-require_once 'step_3/src/Model/Account/Owner.php';
-require_once 'step_3/src/Model/Account/Account.php';
-
-use Alura\Bank\Model\Account\Owner;
-use Alura\Bank\Model\Account\Account;
+use Alura\Bank\Model\{Address, Cpf};
+use Alura\Bank\Model\Account\{Owner, Account};
 
 $address = new Address('Franca', 'Jardim Zelinda', 'Rua X', '251');
 $owner1 = new Owner('Júlia', new Cpf('123.456.789-10'), $address);
