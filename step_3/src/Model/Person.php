@@ -14,9 +14,9 @@ class Person {
   {
     return $this->name;
   }
-  public function getCpf(): Cpf
+  public function getCpf(): string
   {
-    return $this->cpf;
+    return $this->cpf->getCpf();
   }
   protected function validateName(string $name): string 
   {

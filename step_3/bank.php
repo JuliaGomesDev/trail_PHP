@@ -23,15 +23,17 @@ $conta1->transfer(200, $conta2);
 var_dump($conta1);
 var_dump($conta2);
 
-$name = $conta1->returnName();
+$name = $conta1->getPerson()->getName();
 $lastname = ' Nerd';
 echo $name .= $lastname . PHP_EOL;
 
-$cpf = $conta1->returnCPF();
+$cpf = $conta1->getPerson()->getCpf();
 
 echo $cpf ? $cpf . PHP_EOL : 'CPF não informado' . PHP_EOL;
 
-echo 'Contas Corrente: ' . OpenAccount::returnCount() . PHP_EOL .
-     'Contas Poupança: ' . SavingAccount::returnCount() . PHP_EOL;
+echo 'Contas correntes: ' . OpenAccount::returnCount() . PHP_EOL .
+     'Contas poupanças: ' . SavingAccount::returnCount() . PHP_EOL;
+
+     
 
 ?>

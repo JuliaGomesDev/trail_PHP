@@ -1,20 +1,18 @@
 <?php
 
 namespace Alura\Bank\Model\Account;
+
+use Alura\Bank\Model\Person;
+
 abstract class Account 
 {
 
   protected float $balance;
-  protected static int $count = 0;
+  private Person $person;
 
-  private Owner $owner;
-
-  public function __construct(Owner $owner, float $balance) {
-
-    $this->owner = $owner;
+  public function __construct(Person $person, float $balance) {
+    $this->person = $person;
     $this->balance = $balance;
-    
-    self::$count++;
   }
 
   public function getBalance(): float
@@ -27,6 +25,11 @@ abstract class Account
     $this->balance = $balance;
 
     return $this;
+  }
+
+  public function getPerson(): Person 
+  {
+    return $this->person;
   }
 
   abstract public function toWithdrawn(float $value);
@@ -42,16 +45,6 @@ abstract class Account
   }
 
   abstract public static function returnCount() : int;
-
-  public function returnName() : string 
-  {
-    return $this->owner->getName();
-  }
-
-  public function returnCPF() : string 
-  {
-    return $this->owner->returnCPF();
-  }
 };
 
 ?>

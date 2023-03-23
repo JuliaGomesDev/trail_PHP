@@ -3,8 +3,17 @@
 namespace Alura\Bank\Model\Account;
 
 use Alura\Bank\Model\Account\Account;
+use Alura\Bank\Model\Person;
 
 class OpenAccount extends Account {
+
+  private static int $count = 0;
+  public function __construct(Person $person, float $balance) 
+  {
+    parent::__construct($person, $balance);
+    self::$count++;
+  }
+  
   public function toWithdrawn(float $value)
   {
     $valuetoWithdrawn = $value + ($value * 0.05);

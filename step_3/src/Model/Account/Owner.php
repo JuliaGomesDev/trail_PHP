@@ -2,9 +2,7 @@
 
 namespace Alura\Bank\Model\Account;
 
-use Alura\Bank\Model\Person;
-use Alura\Bank\Model\Address;
-use Alura\Bank\Model\Cpf;
+use Alura\Bank\Model\{Person, Address, Cpf};
 
 class Owner extends Person {
 
@@ -14,16 +12,6 @@ class Owner extends Person {
 
     parent::__construct($name, $cpf);
     $this->address = $address;
-  }
-
-  public function getName() : string 
-  {
-     return $this->name;
-  }
-  
-  public function returnCPF() : string 
-  {
-    return $this->cpf->getCPF();
   }
 }
 
