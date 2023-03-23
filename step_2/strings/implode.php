@@ -2,7 +2,7 @@
 
 $phoneNumbers = ['(21) 99999 - 9999' , '(22) 99999 - 9999', '(23) 99999 - 9999'];
 
-echo implode(separator: PHP_EOL, array: $phoneNumbers);
+echo implode(separator: PHP_EOL, array: $phoneNumbers). PHP_EOL;
 
 $numbers = '1 2 3 4';
 
