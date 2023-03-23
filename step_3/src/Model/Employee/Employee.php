@@ -16,21 +16,19 @@ abstract class Employee extends Person {
   {
     return $this->salary;
   }
-
-  public function calculateBonus() : float 
-  {
-    return $this->salary * 0.1;
-  }
-
+  
   public function incriseSalary(float $valueToIncrise) : float
   {
     if($valueToIncrise < 0) {
       echo 'Aumento não pode ser negativo' . PHP_EOL;
       exit();
     }
-
+    
     return $this->salary += $valueToIncrise;
   }
+  
+  abstract public function calculateBonus() : float;
+
 }
 
 ?>

@@ -2,7 +2,7 @@
 
 namespace Alura\Bank\Model;
 
-class Person {
+abstract class Person {
   protected string $name;
   protected Cpf $cpf;
   public function __construct(string $name, Cpf $cpf) 
