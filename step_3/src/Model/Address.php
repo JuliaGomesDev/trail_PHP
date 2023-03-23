@@ -3,6 +3,8 @@
 namespace Alura\Bank\Model;
 
 final class Address {
+
+  use Getters;
   private string $city;
   private string $neighborhood;
   private string $street;

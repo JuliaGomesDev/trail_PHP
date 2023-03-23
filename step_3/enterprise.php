@@ -13,7 +13,8 @@ $address = new Address(
   '123'
 );
 
-echo $address;
+echo $address->city . PHP_EOL
+;
 
 $developer1 = new Developer(
   'João Gabriel', 
