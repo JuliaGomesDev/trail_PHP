@@ -2,8 +2,9 @@
 
 require_once 'autoload.php';
 
-use Alura\Bank\Model\{Address, Cpf};
+use Alura\Bank\Model\{Address, Cpf,};
 use Alura\Bank\Model\Account\{Owner, OpenAccount, SavingAccount};
+use Alura\Bank\Model\Employee\Developer;
 
 $address = new Address('Franca', 'Jardim Zelinda', 'Rua X', '251');
 $owner1 = new Owner('Júlia', new Cpf('123.456.789-10'), $address);
@@ -31,9 +32,15 @@ $cpf = $conta1->getPerson()->getCpf();
 
 echo $cpf ? $cpf . PHP_EOL : 'CPF não informado' . PHP_EOL;
 
+$emploee1 = new Developer(
+  'João Gabriel', 
+  new Cpf('123.469.789-00'), 
+  2600);
+$conta3 = new OpenAccount($emploee1, 300);
+
+var_dump($conta3);
+
 echo 'Contas correntes: ' . OpenAccount::returnCount() . PHP_EOL .
      'Contas poupanças: ' . SavingAccount::returnCount() . PHP_EOL;
-
-     
 
 ?>
