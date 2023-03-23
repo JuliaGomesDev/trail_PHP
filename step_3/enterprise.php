@@ -2,26 +2,38 @@
 
 require_once 'autoload.php';
 
-use Alura\Bank\Model\Cpf;
+use Alura\Bank\Model\{Cpf, Address};
 use Alura\Bank\Model\Employee\{Developer, Director, Manager};
 use Alura\Bank\Service\{Auth, BonusController};
+
+$address = new Address(
+  'Franca', 
+  'Cidade Nova', 
+  'Rua dos Loucos', 
+  '123'
+);
+
+echo $address;
 
 $developer1 = new Developer(
   'João Gabriel', 
   new Cpf('123.469.789-00'),  
-  2000);
+  2000
+);
 
 $developer1->upLevel();
 
 $director1 = new Director(
   'Maria', 
   new Cpf('123.469.893-00'),  
-  5000);
+  5000
+);
 
 $manager1 = new Manager(
   'Eustaquio', 
   new Cpf('123.569.789-00'), 
-  3000);
+  3000
+);
 
 $controller = new BonusController();
 $controller->addBonus($developer1);

@@ -2,7 +2,7 @@
 
 namespace Alura\Bank\Model;
 
-class Address {
+final class Address {
   private string $city;
   private string $neighborhood;
   private string $street;
@@ -29,6 +29,10 @@ class Address {
   public function getNumber(): string
   {
     return $this->number;
+  }
+
+  public function __toString() {
+    return "{$this->street}, {$this->number} - {$this->neighborhood} | {$this->city}" . PHP_EOL;
   }
 }
 
