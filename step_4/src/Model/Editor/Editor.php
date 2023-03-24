@@ -13,14 +13,8 @@ class Editor {
 
   public function getArchive() : string
   {
-   $content = fopen($this->archive, 'r');
-   return fread($content, filesize($this->archive)); 
+    return file_get_contents($this->archive);
   }
 
 }
-
-$obj1 = new Editor('file.txt');
-
-echo $obj1->getArchive();
-
 ?>

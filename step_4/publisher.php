@@ -7,8 +7,6 @@ use Alura\Post\Model\Editor\Editor;
 
 $edit = new Editor('file.txt');
 
-
-
-
+echo $edit->getArchive();
 
 ?>
