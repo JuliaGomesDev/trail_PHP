@@ -2,6 +2,8 @@
 
 namespace Alura\Bank\Model;
 
+use InvalidArgumentException;
+
 class Cpf {
 
   private string $cpf;
@@ -16,13 +18,20 @@ class Cpf {
     return $this->cpf;
   }
 
-  private function validateCPF(string $cpf) : bool|string 
+  private function validateCPF(string $cpf) : string 
   {
-    if($cpf == '') {
-      return false;
+    $cpf = filter_var($cpf, FILTER_VALIDATE_REGEXP, [
+      'options' => [
+        'regexp' => '/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/'
+      ]
+      ]);
+
+    if($cpf === false) {
+      throw new InvalidArgumentException('Cpf inválido');
     }
 
     return $cpf;
+    
   }
 }
 

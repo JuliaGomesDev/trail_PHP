@@ -19,8 +19,7 @@ class OpenAccount extends Account {
     $valuetoWithdrawn = $value + ($value * 0.05);
 
     if($this->balance < $valuetoWithdrawn){
-      echo 'Valor não pode ser sacado' . PHP_EOL;
-      return;
+      throw new InsufficientBalanceException($valuetoWithdrawn, $this->balance);
     }
 
     $this->balance -= $valuetoWithdrawn;
@@ -29,8 +28,7 @@ class OpenAccount extends Account {
   public function transfer(float $valueToTransfer, Account $destinyAccount) : void
   {
     if($valueToTransfer > $this->balance) {
-      echo 'Valor não pode ser transferido' . PHP_EOL;
-      return;
+      throw new \InvalidArgumentException;
     } 
 
     $this->toWithdrawn($valueToTransfer);

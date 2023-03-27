@@ -2,6 +2,8 @@
 
 namespace Alura\Bank\Model;
 
+use Alura\Bank\Model\Employee\InsufficientCharacters;
+
 abstract class Person {
   protected string $name;
   protected Cpf $cpf;
@@ -21,8 +23,7 @@ abstract class Person {
   protected function validateName(string $name): string 
   {
     if(mb_strlen($name) < 5) {
-      echo 'O nome precisa conter mais de 5 caracteres' . PHP_EOL;
-      exit();
+      throw new InsufficientCharacters; 
     }
 
     return $name;

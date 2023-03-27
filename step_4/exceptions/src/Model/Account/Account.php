@@ -37,8 +37,7 @@ abstract class Account
   public function toDeposit(float $value) : void 
   {
     if($value < 0){
-      echo 'Valor não pode ser depositado' . PHP_EOL;
-      return;
+      throw new \InvalidArgumentException;
     }
     
     $this->balance += $value;
