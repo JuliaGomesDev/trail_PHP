@@ -19,10 +19,4 @@ foreach ($courses as $course) {
   echo $course->textContent . PHP_EOL;
 }
 
-
-
-
-
-
-
 ?>
