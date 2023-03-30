@@ -1,10 +1,9 @@
 <?php
 
-use Alura\SearchEngine;
+namespace Alura\SearchEngine;
+
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DomCrawler\Crawler;
-
-use function PHPSTORM_META\elementType;
 
 class Searcher {
 

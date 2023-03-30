@@ -28,12 +28,19 @@ class ComposerStaticInit5f16c4875ed2085aa760eb767838b2da
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
         ),
+        'M' => 
+        array (
+            'Masterminds\\' => 12,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-            'Gomesjuliadev\\Cousesearchengine\\' => 32,
+        ),
+        'A' => 
+        array (
+            'Alura\\SearchEngine\\' => 19,
         ),
     );
 
@@ -63,6 +70,10 @@ class ComposerStaticInit5f16c4875ed2085aa760eb767838b2da
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
+        'Masterminds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -75,9 +86,9 @@ class ComposerStaticInit5f16c4875ed2085aa760eb767838b2da
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Gomesjuliadev\\Cousesearchengine\\' => 
+        'Alura\\SearchEngine\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/formation-02/searchEngine/src',
         ),
     );
 

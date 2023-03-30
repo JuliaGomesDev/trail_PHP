@@ -1,10 +1,11 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'formation-02/searchEngine/src/Searcher.php';
+// require 'formation-02/searchEngine/src/Searcher.php';
 
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
+use Alura\SearchEngine\Searcher;
 
 $client = new Client(['base_uri' => 'https://www.alura.com.br']);
 $crawler = new Crawler();

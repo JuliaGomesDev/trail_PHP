@@ -1,22 +1,22 @@
 {
-    "name": "gomesjuliadev/cousesearchengine",
-    "description": "Projeto que busca os cursos no site da Alura",
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Gomesjuliadev\\Cousesearchengine\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Julia Gomes",
-            "email": "julia.gomes@novahaus.com.br"
-        }
-    ],
-    "require": {
-        "guzzlehttp/guzzle": "^7.5",
-        "symfony/dom-crawler": "^6.0",
-        "symfony/css-selector": "^6.2"
+  "name": "gomesjuliadev/cousesearchengine",
+  "description": "Projeto que busca os cursos no site da Alura",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Alura\\SearchEngine\\": "formation-02/searchEngine/src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Julia Gomes",
+      "email": "julia.gomes@novahaus.com.br"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7.5",
+    "symfony/dom-crawler": "^6.0",
+    "symfony/css-selector": "^6.2"
+  }
 }
