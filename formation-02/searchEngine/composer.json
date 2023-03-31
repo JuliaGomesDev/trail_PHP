@@ -4,6 +4,9 @@
   "type": "library",
   "license": "MIT",
   "autoload": {
+    "files": [
+      "./src/message.php"
+    ],
     "psr-4": {
       "Alura\\SearchEngine\\": "src/"
     }
