@@ -33,7 +33,6 @@ class Searcher {
 
     return $courses;
   }
-
 }
 
 ?>
