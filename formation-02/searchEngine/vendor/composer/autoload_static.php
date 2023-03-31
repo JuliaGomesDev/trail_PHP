@@ -88,7 +88,7 @@ class ComposerStaticInit5f16c4875ed2085aa760eb767838b2da
         ),
         'Alura\\SearchEngine\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/formation-02/searchEngine/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

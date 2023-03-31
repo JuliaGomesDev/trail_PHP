@@ -1,7 +1,6 @@
 <?php
 
 require 'vendor/autoload.php';
-// require 'formation-02/searchEngine/src/Searcher.php';
 
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;

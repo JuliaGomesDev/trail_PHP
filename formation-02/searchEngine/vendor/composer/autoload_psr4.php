@@ -16,5 +16,5 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
-    'Alura\\SearchEngine\\' => array($baseDir . '/formation-02/searchEngine/src'),
+    'Alura\\SearchEngine\\' => array($baseDir . '/src'),
 );
